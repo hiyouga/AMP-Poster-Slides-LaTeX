@@ -86,11 +86,11 @@
 \centering
 \begin{minipage}{0.4\linewidth}
 \centering
-\includegraphics[width=.7\linewidth]{figs/flatness_a.png}
+\includegraphics[width=.65\linewidth]{figs/flatness_a.png}
 \end{minipage}
 \begin{minipage}{0.4\linewidth}
 \centering
-\includegraphics[width=.7\linewidth]{figs/flatness_b.png}
+\includegraphics[width=.65\linewidth]{figs/flatness_b.png}
 \end{minipage}
 
 \vspace{0.5em}
@@ -101,7 +101,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \headerbox{\bf\color{blue}Method}{name=method,column=1,row=0,span=1}{
 \textbf{\color{blue}AMP: Adversarial Model Perturbation}\\
-We derive an AMP loss from the empirical risk (ERM loss). Minimizing such an AMP loss can penalize the sharp minima by adversarially perturbing the model parameters.\\
+We derive an AMP loss from the empirical risk (ERM loss) by applying the ``worst'' perturbation on the model parameters to penalize the sharp minima.\\
 \vspace{-0.5em}
 \begin{equation*}
 \mathcal{L}_\mathrm{ERM}(\boldsymbol{\theta}):=\frac{1}{|D|}\sum_{(\boldsymbol{x},\boldsymbol{y})\in\mathcal{D}}\ell(\boldsymbol{x},\boldsymbol{y};\boldsymbol{\theta})
@@ -395,7 +395,7 @@ Under the locally Gaussian assumption, the empirical risk $\gamma(\boldsymbol{\t
 \vspace{-1.7em}
 
 \noindent where $\sigma^2$ is the smallest eigenvalue of $\boldsymbol{\kappa}$.\\
-It is clear that $\gamma^\ast_\mathrm{AMP}$ although related to the minimum value of empirical risk $\gamma^\ast$, it also takes into account the curvature of the surface around the local minimum. Thus we can find a flatter minimum through minimizing $\mathcal{L}_\mathrm{AMP}$.\\
+It is clear that $\gamma^\ast_\mathrm{AMP}$ although related to the minimum value of empirical risk $\gamma^\ast$, it also takes into account the curvature of the surface around the local minimum.\\
 \begin{minipage}{0.99\linewidth}
 \centering
 \begin{minipage}{0.4\linewidth}
@@ -409,8 +409,8 @@ It is clear that $\gamma^\ast_\mathrm{AMP}$ although related to the minimum valu
 \end{minipage}
 
 \textbf{\color{blue}AMP Regularizes Gradient Norm:}\\
-Consider that $N=1$. The AMP training is equivalent to ERM training with an additional term:
-\vspace{-0.6em}
+Consider that $N=1$ (in fact used). The AMP training is equivalent to ERM training with an additional term:
+\vspace{-0.8em}
 \begin{equation*}
 \widetilde{\mathcal{J}}_\mathrm{ERM}(\boldsymbol{\theta}):=\mathcal{J}_\mathrm{ERM}(\boldsymbol{\theta})+\Omega(\boldsymbol{\theta})
 \end{equation*}
@@ -425,8 +425,9 @@ where
 \end{cases}
 \end{equation*}
 \vspace{-1.5em}
-}
 
+Note that a minimum with smaller gradient norms around it is a flatter minimum.
+}
 
 \end{poster}
 \end{document}

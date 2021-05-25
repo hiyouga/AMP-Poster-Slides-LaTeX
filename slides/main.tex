@@ -1,0 +1,40 @@
+\documentclass[11pt,aspectratio=169]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usetheme{Luebeck}
+\usepackage[ruled,noline,linesnumbered]{algorithm2e}
+\usepackage{minted}
+\usepackage{subcaption}
+\usepackage{booktabs}
+
+\input{theme}
+
+\newcommand{\etal}{\textit{et al}.}
+\newcommand{\ie}{\textit{i}.\textit{e}.}
+\newcommand{\eg}{\textit{e}.\textit{g}.}
+
+
+\title{Regularizing Neural Networks via Adversarial Model Perturbation}
+\author[Yaowei Zheng, Richong Zhang, Yongyi Mao]{\textbf{Yaowei Zheng}\inst{1} \and Richong Zhang\inst{1} \and Yongyi Mao\inst{2}}
+\institute{
+\inst{1}BDBC and SKLSDE, Beihang University, Beijing, China\and
+\inst{2}School of EECS, University of Ottawa, Ottawa, Canada
+}
+\date{CVPR 2021}
+\addtobeamertemplate{title page}{\centering\includegraphics[width=3.5em]{figs/buaa.png}\hspace{1em}\includegraphics[width=6em]{figs/uottawa.png}}{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+\input{background}
+\input{amp}
+\input{justification}
+\input{experiments}
+\input{conclusion}
+
+\end{document}
