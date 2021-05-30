@@ -29,12 +29,13 @@
 \setlength{\columnsep}{0.7em}
 \setlength{\columnseprule}{0mm}
 
-\setlist[enumerate]{leftmargin=2.5em,nosep}
-\setlength{\columnsep}{0.7em}
+\setlist[enumerate]{leftmargin=2.3em,nosep}
+\setlength{\columnsep}{0.5em}
 \setlength{\columnseprule}{0mm}
 
-\renewcommand{\rmdefault}{ptm} % Arial
-\renewcommand{\sfdefault}{ptm} % Arial
+% \renewcommand{\rmdefault}{ptm} % Arial
+% \renewcommand{\sfdefault}{ptm} % Arial
+\renewcommand{\familydefault}{\sfdefault}
 
 \begin{document}
 
@@ -347,7 +348,7 @@ AMP Test Loss
 \vspace{-1.5em}
 
 \textbf{\color{blue}Pseudo-code:}
-\begin{tcolorbox}[colframe=blue,colback=white,boxrule=0.5pt,arc=4pt,left=6pt,right=6pt,top=2pt,bottom=2pt,boxsep=0pt]
+\begin{tcolorbox}[colframe=blue,colback=white,boxrule=0.5pt,arc=4pt,left=6pt,right=0pt,top=2pt,bottom=2pt,boxsep=0pt]
 {\small
 \begin{algorithm}[H]
 \While{$\boldsymbol{\theta}$ not converged}{
@@ -384,9 +385,9 @@ Update $\boldsymbol{\theta}$ to minimize $\mathcal{L}_\mathrm{ERM}(\boldsymbol{\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{\bf\color{blue}Theoretical~Justification}{name=method,column=1,below=summary,span=1}{
+\headerbox{\bf\color{blue}Theoretical~Justification}{name=method,column=1,below=summary,span=1,boxpadding=0.45em}{
 \textbf{\color{blue}AMP Finds Flatter Minima:}\\
-We assume that the loss surface of each local minimum in $\mathcal{L}_\mathrm{ERM}$ can be {\em locally} approximated as an inverted Gaussian surface $\gamma$ with a mean vector $\boldsymbol{\mu}$ and a covariance matrix $\boldsymbol{\kappa}$.\\
+Assuming that the loss surface of each local minimum in $\!\mathcal{L}_\mathrm{ERM}\!$ can be {\em locally} approximated as an inverted Gaussian surface $\!\gamma\!$ with a mean vector $\!\boldsymbol{\mu}\!$ and a covariance matrix $\!\boldsymbol{\kappa}$.\\
 Under the locally Gaussian assumption, the empirical risk $\gamma(\boldsymbol{\theta};\boldsymbol{\mu},\boldsymbol{\kappa},A,C)$ is minimized when $\boldsymbol{\theta}=\boldsymbol{\mu}$ and the minimum value is $\gamma^\ast(\boldsymbol{\mu},\boldsymbol{\kappa},A,C)=C-A$. The minimum value of the AMP loss is the empirical risk at the location in the narrowest principal direction of the cross-section of the loss surface:
 \vspace{-1.2em}
 \begin{equation*}
@@ -409,15 +410,15 @@ It is clear that $\gamma^\ast_\mathrm{AMP}$ although related to the minimum valu
 \end{minipage}
 
 \textbf{\color{blue}AMP Regularizes Gradient Norm:}\\
-Consider that $N=1$ (in fact used). The AMP training is equivalent to ERM training with an additional term:
+Consider that $N\!=\!1$ (in fact used). The AMP training is equivalent to ERM training with an additional term:
 \vspace{-0.8em}
 \begin{equation*}
 \widetilde{\mathcal{J}}_\mathrm{ERM}(\boldsymbol{\theta}):=\mathcal{J}_\mathrm{ERM}(\boldsymbol{\theta})+\Omega(\boldsymbol{\theta})
 \end{equation*}
-\vspace{-2.2em}
+\vspace{-2.3em}
 
 where
-\vspace{-1em}
+\vspace{-1.1em}
 \begin{equation*}
 \Omega(\boldsymbol{\theta}):=\begin{cases}
 \zeta\Vert\nabla_{\boldsymbol{\theta}}\mathcal{J}_\mathrm{ERM}(\boldsymbol{\theta})\Vert_2^2,&\!\!\!\!\Vert\zeta\nabla_{\boldsymbol{\theta}}\mathcal{J}_\mathrm{ERM}(\boldsymbol{\theta})\Vert_2\le\epsilon\\
