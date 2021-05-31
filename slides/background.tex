@@ -1,29 +1,11 @@
 \section{Background}
 
-% \begin{frame}{Outline}
-% \tableofcontents[currentsection]
-% \end{frame}
-
-\begin{frame}{Regularization Alleviate Overfitting}
-
-% Regularization is the most important approach in practice to alleviate overfitting and improve generalization. The following figures sketch the generalization behaviour of the deep neural networks.
-
-% Typical regularization techniques improve generalization through various approaches, including:
-
-% However, more {\bf principled} and more {\bf powerful} regularization schemes are yet to be discovered.
-
-Effective regularization schemes alleviate overfitting and improve generalization.
+\begin{frame}{Regularization Alleviates Overfitting}
 
 \begin{figure}
-\includegraphics[width=.45\textwidth]{figs/gap1.pdf}
-\includegraphics[width=.45\textwidth]{figs/gap2.pdf}
+\subcaptionbox{without regularization}[.48\textwidth]{\includegraphics[width=.48\textwidth]{figs/gap1.pdf}}
+\subcaptionbox{with regularization}[.48\textwidth]{\includegraphics[width=.48\textwidth]{figs/gap2.pdf}}
 \end{figure}
-\vspace{-1em}
-{\small
-\begin{itemize}
-    \item Some researchers have found the modern neural networks may have different behaviour, \ie, the {\em Double Descent} (Nakkiran \etal, 2020). Nevertheless, well-regularized neural networks consistently achieve better performance in practice.
-\end{itemize}
-}
 
 \end{frame}
 

@@ -1,35 +1,39 @@
 \section{AMP: Adversarial Model Perturbation}
 
-% \begin{frame}{Outline}
-% \tableofcontents[currentsection]
-% \end{frame}
-
 \begin{frame}{From Empirical Risk to AMP Loss}
 
 \begin{columns}
+
 \column{0.66\textwidth}
 
-The AMP loss is derived from empirical risk by applying the ``worst'' perturbation on the model parameters.
+In this paper, we optimize an alternative ``AMP loss''.
 
-\begin{equation}
+\vspace{1em}
+
+\begin{equation*}
 \mathcal{L}_\mathrm{ERM}(\boldsymbol{\theta}):=\frac{1}{|D|}\sum_{(\boldsymbol{x},\boldsymbol{y})\in\mathcal{D}}\ell(\boldsymbol{x},\boldsymbol{y};\boldsymbol{\theta})
-\end{equation}
+\end{equation*}
 
-\begin{equation}
+\vspace{1em}
+
+\begin{equation*}
 \mathcal{L}_\mathrm{AMP}(\boldsymbol{\theta}):=\max_{\Delta:\Vert\Delta\Vert\le\epsilon}\mathcal{L}_\mathrm{ERM}(\boldsymbol{\theta}+\Delta)
-\end{equation}
+\end{equation*}
 
-As sketched in the figures, it applies a ``max-pooling'' operation on the empirical risk to seek a flatter minimum.
+\vspace{2em}
 
 \column{0.34\textwidth}
+
 \begin{figure}
 \includegraphics[width=.8\textwidth]{figs/loss_example_a.pdf}
 \end{figure}
-
+\vspace{-1.5em}
 \begin{figure}
 \includegraphics[width=.8\textwidth]{figs/loss_example_b.pdf}
 \end{figure}
 \end{columns}
+
+\vspace{2em}
 
 \end{frame}
 
@@ -38,9 +42,11 @@ As sketched in the figures, it applies a ``max-pooling'' operation on the empiri
 
 A mini-batch SGD is used for solving the ``min-max'' problem.
 
-\begin{equation}
+\vspace{-0.5em}
+
+\begin{equation*}
 \min_{\boldsymbol{\theta}}\max_{\Delta:\Vert\Delta\Vert\le\epsilon}\mathcal{L}_\mathrm{ERM}(\boldsymbol{\theta}+\Delta)
-\end{equation}
+\end{equation*}
 
 \begin{algorithm}[H]
 \SetAlgoVlined
@@ -56,6 +62,9 @@ Update $\boldsymbol{\theta}$ to minimize $\mathcal{L}_\mathrm{ERM}(\boldsymbol{\
 }
 \caption{Adversarial Model Perturbation Training}
 \end{algorithm}
+
+\vspace{1em}
+
 \end{frame}
 
 \begin{frame}[fragile]{Implementation}
