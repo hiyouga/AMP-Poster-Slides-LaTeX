@@ -1,6 +1,6 @@
 Hello, everyone. I am glad to share my recent research with you here. In this brief presentation, I will talk about the novel regularization technique presented in this paper, named adversarial model perturbation.
 
-Effective regularization schemes alleviate overfitting and improve generalization. Look at the two figures, the left figure sketches the model's behavior without regularization, which can only achieve a large generalization error on a relatively small capacity.  However, in the right figure, The model can achieve a small generalization error on a relatively large capacity. Some researchers have found the modern neural networks may have different behavior, that is, the Double Descent. Nevertheless, well-regularized neural networks consistently achieve better performance in practice.
+Effective regularization schemes alleviate overfitting and improve generalization. Look at the two figures, the left figure sketches the model's behavior without regularization, which can only achieve a large generalization error on a relatively small capacity.  However, in the right figure, the model can achieve a small generalization error on a relatively large capacity. Some researchers have found the modern neural networks may have different behavior, that is, the Double Descent. Nevertheless, well-regularized neural networks consistently achieve better performance in practice.
 
 Previous work suggested that the flat minima can improve generalization both in theoretical and empirical perspectives. So in this work, we propose a powerful regularization scheme principled by the objective of finding flat minima.
 
@@ -16,11 +16,11 @@ Under the locally Gaussian assumption, the empirical risk is minimized when \the
 
 On the other hand, AMP can regularize gradient norm. Consider that N equals one, which is in fact used in our experiments. The AMP training is equivalent to ERM training with an additional term. Thus, the AMP training algorithm effectively tries to find the local minima of empirical risk that not only have low values, but also have small gradient norms near the minima. Note that a minimum with smaller gradient norms around it is a flatter minimum.
 
-Now we have given the formulation and justification of AMP. We also conduct extensive experiments to validate the effectiveness of AMP. Here is the setup of our experiments.
+Now we have given the formulation and justifications of AMP. We also conducted extensive experiments to validate the effectiveness of AMP. Here is the setup of our experiments.
 
 Firstly, we find that AMP has a larger training loss but smaller test loss than ERM training.
 
-On three image classification benchmarks, AMP achieves the best classification performance among the compared regularization schemes.
+On three image classification benchmarks, AMP achieves the best performance among the compared regularization schemes.
 
 Furthermore, AMP can improve the model's performance over powerful data augmentation techniques.
 
